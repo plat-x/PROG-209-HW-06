@@ -57,7 +57,31 @@ app.get('/error', function(req, res) {
     });
 });
 
+// movies page 
+app.get('/movies', function(req, res) {
+    let movieObject ={
+        movie1: "Finding Nemo",
+        movie2: "Inside Out",
+        movie3: "Ratatouille",
+        movie4: "A Bug's Life"
+    };
+    res.render('pages/movies', {  // pass the data to the page renderer
+        movie: movieObject
+    });
+});
 
+// tvshows page 
+app.get('/tvshows', function(req, res) {
+    let tvshowObject ={
+        tvshow1: "TV show 1",
+        tvshow2: "TV show 2",
+        tvshow3: "TV show 3",
+        tvshow4: "TV show 4"
+    };
+    res.render('pages/tvshows', {  // pass the data to the page renderer
+        tvshow: tvshowObject
+    });
+});
 
 app.listen(3000);  // not setting port number in www.bin, simple to do here
 console.log('3000 is the magic port');
